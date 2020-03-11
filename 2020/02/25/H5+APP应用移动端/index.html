@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>关于H5开发app应用,移动端无法访问后台服务的总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一节 我的开博感个人博客成功！！！ 开森♥  第一节 我的身份一名女程序员！！！  参考文献感谢大佬！ www.codesheep.cn">
+  <meta name="description" content="问题1：真机测试的时候，ajax请求一直返回error 原因分析： 1.请求成功，但是返回error：  在浏览器中模拟移动端测试，发现会提示请求头错误，这种情况多半是由于， 访问前后端存在跨域的问题，在后端添加跨域处理，一般可以解决问题。问题2：真机测试的时候，无法请求后台 在浏览器中，可以正常请求数据，在移动端真机测试，无法请求：      （1）检测移动端和服务器是否处于同一个局域网下面，（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章">
-<meta property="og:url" content="http://yoursite.com/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="关于H5开发app应用,移动端无法访问后台服务的总结">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/H5+APP%E5%BA%94%E7%94%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一节 我的开博感个人博客成功！！！ 开森♥  第一节 我的身份一名女程序员！！！  参考文献感谢大佬！ www.codesheep.cn">
+<meta property="og:description" content="问题1：真机测试的时候，ajax请求一直返回error 原因分析： 1.请求成功，但是返回error：  在浏览器中模拟移动端测试，发现会提示请求头错误，这种情况多半是由于， 访问前后端存在跨域的问题，在后端添加跨域处理，一般可以解决问题。问题2：真机测试的时候，无法请求后台 在浏览器中，可以正常请求数据，在移动端真机测试，无法请求：      （1）检测移动端和服务器是否处于同一个局域网下面，（">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-25T02:00:45.000Z">
-<meta property="article:modified_time" content="2020-02-26T11:38:03.232Z">
+<meta property="article:modified_time" content="2020-03-11T10:04:45.754Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,19 +154,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-H5+APP应用移动端" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客文章
+      关于H5开发app应用,移动端无法访问后台服务的总结
     </h1>
   
 
         
-        <a href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
+        <a href="/2020/02/25/H5+APP%E5%BA%94%E7%94%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF/" class="archive-article-date">
   	<time datetime="2020-02-25T02:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
 </a>
         
@@ -174,13 +174,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一节-我的开博感"><a href="#第一节-我的开博感" class="headerlink" title="第一节 我的开博感"></a>第一节 我的开博感</h2><p>个人博客成功！！！</p>
-<p>开森♥</p>
+        <p><strong>问题1：真机测试的时候，ajax请求一直返回error</strong></p>
+<p>原因分析：</p>
+<pre><code>1.请求成功，但是返回error：
+
+在浏览器中模拟移动端测试，发现会提示请求头错误，这种情况多半是由于，
+访问前后端存在跨域的问题，在后端添加跨域处理，一般可以解决问题。</code></pre><p><strong>问题2：真机测试的时候，无法请求后台</strong></p>
+<pre><code>在浏览器中，可以正常请求数据，在移动端真机测试，无法请求：
+
+    （1）检测移动端和服务器是否处于同一个局域网下面，（如果你的计算机有线，手机连接了光猫的wifi,则无法通讯），如果是笔记本，一般笔记本分享wifi,移动端连接，则可以正常通讯
+
+    （2）检测请求地址，应该为局域网内部ip
+
+    （3）检测是否开启了防火墙，防火墙一般会拦截此类外部请求</code></pre><p><strong><em>以上仅为本人在开发中遇到的一些问题后的转载笔记,本人在他人文章上看到解决办法的总结。</em></strong></p>
 <hr>
-<h2 id="第一节-我的身份"><a href="#第一节-我的身份" class="headerlink" title="第一节 我的身份"></a>第一节 我的身份</h2><p>一名女程序员！！！</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>感谢大佬！</p>
-<p><a href="http://www.codesheep.cn" target="_blank" rel="noopener">www.codesheep.cn</a></p>
+<p>版权声明：本文为CSDN博主「村委老书记」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/qq_29917427/article/details/87891016" target="_blank" rel="noopener">https://blog.csdn.net/qq_29917427/article/details/87891016</a></p>
 
       
 
@@ -260,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/25/H5+APP%E5%BA%94%E7%94%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF/" alt="微信分享二维码">
     </div>
 </div>
 
