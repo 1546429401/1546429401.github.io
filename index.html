@@ -152,19 +152,91 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-移动端和后端连接问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-idea中无法找到mapper文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/25/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/">关于H5开发app应用,移动端无法访问后台服务的总结</a>
+      <a class="article-title" href="/2020/02/25/idea%E4%B8%AD%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0mapper%E6%96%87%E4%BB%B6/">idea运行时无法访问mybatis的mapper.xml文件</a>
     </h1>
   
 
         
-        <a href="/2020/02/25/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/" class="archive-article-date">
+        <a href="/2020/02/25/idea%E4%B8%AD%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0mapper%E6%96%87%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2020-02-25T02:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>方法1：在pom.xml的build节点中加入以下代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">  &lt;resource&gt;</span><br><span class="line">    &lt;directory&gt;src&#x2F;main&#x2F;java&lt;&#x2F;directory&gt;</span><br><span class="line">    &lt;includes&gt;</span><br><span class="line">      &lt;include&gt;**&#x2F;*.xml&lt;&#x2F;include&gt;</span><br><span class="line">    &lt;&#x2F;includes&gt;</span><br><span class="line">    &lt;filtering&gt;false&lt;&#x2F;filtering&gt;</span><br><span class="line">  &lt;&#x2F;resource&gt;</span><br><span class="line">&lt;&#x2F;resources&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>方法2：</strong></p>
+<pre><code>A. 将mybatis的mapper.xml文件统一放在resources目录下(新建一个mapper文件夹)
+   resource目录要被标记为源文件
+B.在spring.xml配置文件中的 bean id=&quot;sqlSessionFactory&quot; 中加入以下代码
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name&#x3D;&quot;mapperLocations&quot; value&#x3D;&quot;classpath:mapper&#x2F;*Mapper.xml&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure></code></pre><p><strong><em>以上为个人亲测示例,仅供参考  2020/3/12</em></strong></p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/25/idea%E4%B8%AD%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0mapper%E6%96%87%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于H5开发app应用,移动端无法访问后台服务的总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/25/%E5%85%B3%E4%BA%8EH5%E5%BC%80%E5%8F%91app%E5%BA%94%E7%94%A8,%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%80%BB%E7%BB%93/">关于H5开发app应用,移动端无法访问后台服务的总结</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/25/%E5%85%B3%E4%BA%8EH5%E5%BC%80%E5%8F%91app%E5%BA%94%E7%94%A8,%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2020-02-25T02:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
 </a>
         
@@ -199,79 +271,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/25/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%92%8C%E5%90%8E%E7%AB%AF%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-idea中无法找到mapper文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/25/idea%E4%B8%AD%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0mapper%E6%96%87%E4%BB%B6/">idea运行时无法访问mybatis的mapper.xml文件</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/25/idea%E4%B8%AD%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0mapper%E6%96%87%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2020-02-25T02:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>方法1：在pom.xml的build节点中加入以下代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">  &lt;resource&gt;</span><br><span class="line">    &lt;directory&gt;src&#x2F;main&#x2F;java&lt;&#x2F;directory&gt;</span><br><span class="line">    &lt;includes&gt;</span><br><span class="line">      &lt;include&gt;**&#x2F;*.xml&lt;&#x2F;include&gt;</span><br><span class="line">    &lt;&#x2F;includes&gt;</span><br><span class="line">    &lt;filtering&gt;false&lt;&#x2F;filtering&gt;</span><br><span class="line">  &lt;&#x2F;resource&gt;</span><br><span class="line">&lt;&#x2F;resources&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>方法2：</strong></p>
-<pre><code>A. 将mybatis的mapper.xml文件统一放在resources目录下(新建一个mapper文件夹)
-   resource目录要被标记为源文件
-B.在spring.xml配置文件中的&lt;bean id=&quot;sqlSessionFactory&quot; &gt;中加入以下代码
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name&#x3D;&quot;mapperLocations&quot; value&#x3D;&quot;classpath:mapper&#x2F;*Mapper.xml&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure></code></pre><p><strong><em>以上为个人亲测示例,仅供参考  2020/3/12</em></strong></p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/25/idea%E4%B8%AD%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0mapper%E6%96%87%E4%BB%B6/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/25/%E5%85%B3%E4%BA%8EH5%E5%BC%80%E5%8F%91app%E5%BA%94%E7%94%A8,%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%80%BB%E7%BB%93/">展开全文 >></a>
         </p>
       
 
